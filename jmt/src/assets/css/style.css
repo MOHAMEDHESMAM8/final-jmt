@@ -1,0 +1,606 @@
+/* ==============================================================================================================================
+														[ * Global Element ]
+===============================================================================================================================*/
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #222;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  overflow: hidden;
+}
+body .logo {
+  font-size: 45px;
+  text-align: center;
+}
+body .content {
+  margin-top: 100px;
+}
+
+/* ==============================================================================================================================
+														[ * Form Element ]
+===============================================================================================================================*/
+.jmt-attendee-form {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jmt-attendee-form form {
+  height: 650px;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+.jmt-attendee-form form .inputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.jmt-attendee-form form .inputGroup label {
+  margin-bottom: 10px;
+}
+.jmt-attendee-form form .inputGroup .input {
+  height: 50px;
+  outline: none;
+  border: none;
+  background-color: #222;
+  padding: 15px;
+}
+.jmt-attendee-form .waiting-screen {
+  min-height: 200px;
+}
+.jmt-attendee-form .waiting-screen img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+.jmt-attendee-form .waiting-screen .time-elapsed, .jmt-attendee-form .waiting-screen .people {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.jmt-attendee-form .waiting-screen .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.jmt-attendee-form .waiting-screen .social-icons a {
+  font-size: 18px;
+  color: #A04422;
+}
+.jmt-attendee-form .waiting-screen .welcomeMessage {
+  text-align: center;
+  color: #A04422;
+  font-weight: 600;
+}
+
+/* ==============================================================================================================================
+														[ * Button Element ]
+===============================================================================================================================*/
+.jmt-button {
+  padding: 15px 40px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+.jmt-button:hover {
+  background-color: #0e0d0d;
+  box-shadow: 7px 10px 15px rgba(0, 0, 0, 0.2666666667);
+  transform: translateY(-2px);
+}
+
+/* ==============================================================================================================================
+														[ * Game Element ]
+===============================================================================================================================*/
+.game-holder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(#e4e0ba, #f7d9aa);
+  background: linear-gradient(#e4e0ba, #f7d9aa);
+}
+
+.world {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.header h1 {
+  font-family: "Playfair Display";
+  font-size: 4.5em;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.025em;
+  color: #d1b790;
+}
+
+.header h1 span {
+  font-size: 0.2em;
+  font-style: italic;
+  display: block;
+  margin: 0 0 -1.5em -7em;
+  letter-spacing: 0px;
+}
+
+.header h2 {
+  font-size: 0.585em;
+  margin: 0.25em 0;
+  white-space: nowrap;
+  text-indent: 1em;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  color: #d6483b;
+}
+
+.score {
+  width: 100%;
+  margin: 2em 0 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.score__content {
+  position: relative;
+  display: inline-block;
+  padding: 0 1em;
+  vertical-align: top;
+}
+
+.score__content:nth-child(2) {
+  border-right: 1px solid #d1b790;
+  border-left: 1px solid #d1b790;
+}
+
+.score__label {
+  font-size: 9px;
+  position: relative;
+  margin: 0 0 0.5em 0;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d1b790;
+}
+
+.score__value {
+  font-family: "Playfair Display";
+  font-weight: bold;
+  color: #d1b790;
+}
+
+.score__value--level {
+  font-size: 26px;
+}
+
+.score__value--dist {
+  font-size: 30px;
+}
+
+.level-circle {
+  position: absolute;
+  left: 50%;
+  width: 46px;
+  margin: -37px 0 0 -23px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.score__value--energy {
+  position: relative;
+  width: 60px;
+  height: 8px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: #d1b790;
+}
+
+.energy-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background-color: #f25346;
+  -webkit-animation-name: none;
+  animation-name: none;
+  -webkit-animation-duration: 150ms;
+  animation-duration: 150ms;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.message {
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.message--replay {
+  font-size: 1.25vw;
+  bottom: 40vh;
+  display: none;
+  text-indent: 0.5em;
+  letter-spacing: 0.5em;
+  color: #d1b790;
+}
+
+.message--instructions {
+  font-family: "Playfair Display";
+  font-size: 0.85em;
+  bottom: 8vh;
+  letter-spacing: 0.2em;
+  color: #68c3c0;
+}
+
+.message--instructions span {
+  display: block;
+  color: #d6483b;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 40em) {
+  .header {
+    font-size: 0.75em;
+    top: 6.5em;
+  }
+  .header h2 {
+    letter-spacing: 0.65em;
+  }
+}
+/* ==============================================================================================================================
+														[ * Patient Element ]
+===============================================================================================================================*/
+.jmt-patient .session-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  padding: 20px 25px;
+}
+
+.session-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  padding: 20px 25px;
+}
+
+/* ==============================================================================================================================
+														[ * Success Popup Element ]
+===============================================================================================================================*/
+.success_popup {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+/* ==============================================================================================================================
+														[ * Session Element ]
+===============================================================================================================================*/
+.jmt-sessions h2 {
+  margin-bottom: 45px;
+}
+.jmt-sessions .no-btn, .jmt-sessions .yes-btn {
+  padding: 10px 40px;
+}
+.jmt-sessions .jmt-session {
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 30px 55px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.jmt-sessions .jmt-session .play-now {
+  outline: none;
+  border: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+.jmt-sessions .jmt-session .rec-col {
+  height: 100%;
+}
+.jmt-sessions .jmt-session .rec-col .icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+.jmt-sessions .jmt-session .rec-col .icon.info {
+  background-color: #444;
+  margin-right: 15px;
+}
+.jmt-sessions .jmt-session .rec-col .icon.delete {
+  background-color: #fff;
+  color: #1a1a1a;
+  margin-left: 15px;
+}
+.jmt-sessions .jmt-session .rec-col .icon.edit {
+  background-color: #1a1a1a;
+}
+.jmt-sessions .jmt-session .rec-col .rec {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* ==============================================================================================================================
+														[ * Add Icon Element ]
+===============================================================================================================================*/
+.jmt-addIcon {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.jmt-addIcon:hover {
+  background-color: #0e0d0d;
+  box-shadow: 7px 10px 15px rgba(0, 0, 0, 0.2666666667);
+  transform: translateY(-2px);
+}
+
+/* ==============================================================================================================================
+														[ * Patients Element ]
+===============================================================================================================================*/
+.jmt-patients h2 {
+  margin-bottom: 40px;
+}
+
+/* ==============================================================================================================================
+														[ * Dashboard Element ]
+===============================================================================================================================*/
+.jmt-dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+.jmt-dashboard .jmt-sidebar {
+  width: 300px;
+  background-color: #1a1a1a;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  box-shadow: -10px 4px 55px -10px rgba(0, 0, 0, 0.2666666667);
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  z-index: 99;
+}
+.jmt-dashboard .jmt-sidebar.collapsed {
+  width: 0 !important;
+}
+.jmt-dashboard .jmt-sidebar.collapsed .logo, .jmt-dashboard .jmt-sidebar.collapsed .sidebar_links {
+  opacity: 0;
+}
+.jmt-dashboard .jmt-sidebar.collapsed .collapseBtn {
+  right: -20px;
+  border-radius: 0px 10px 10px 0px;
+  opacity: 1 !important;
+  z-index: 10;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2666666667);
+}
+.jmt-dashboard .jmt-sidebar.collapsed .collapseBtn svg {
+  transform: rotate(180deg);
+}
+.jmt-dashboard .jmt-sidebar .collapseBtn {
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 65px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px 0 0 10px;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2666666667);
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+.jmt-dashboard .jmt-sidebar .collapseBtn svg {
+  transition: all ease 1s;
+  height: 18px;
+  fill: #fff;
+}
+.jmt-dashboard .jmt-sidebar .logo {
+  width: 200px;
+  object-fit: cover;
+  transition: all ease-in-out 0.3s;
+  margin: 30px auto;
+}
+.jmt-dashboard .jmt-sidebar .sidebar_links {
+  transition: all ease-in-out 0.3s;
+}
+.jmt-dashboard .jmt-sidebar .sidebar_links .nav_link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  transition: ease-in-out 0.2s;
+  text-decoration: none;
+  color: #fff;
+  text-wrap: nowrap;
+}
+.jmt-dashboard .jmt-sidebar .sidebar_links .nav_link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.jmt-dashboard .jmt-sidebar .sidebar_links .nav_link.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+.jmt-dashboard .jmt-sidebar .nav_link.logout {
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  width: 100%;
+}
+.jmt-dashboard .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .jmt-dashboard .jmt-sidebar {
+    position: fixed;
+  }
+}
+/* ==============================================================================================================================
+														[ * Modal Element ]
+===============================================================================================================================*/
+.jmt-modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.jmt-modal-container .modal-content-large {
+  padding: 40px 60px;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 7px 10px 15px rgba(0, 0, 0, 0.2666666667);
+  position: relative;
+}
+
+/* ==============================================================================================================================
+														[ * inout Element ]
+===============================================================================================================================*/
+.jmt-inputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.jmt-inputGroup label {
+  margin-bottom: 10px;
+}
+.jmt-inputGroup .input {
+  height: 50px;
+  outline: none;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  padding: 15px;
+}
+
+/* ==============================================================================================================================
+														[ * Datatable Element ]
+===============================================================================================================================*/
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root {
+  border-color: rgb(81, 81, 81);
+  color: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root p {
+  margin: 0;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-withBorderColor {
+  border-color: rgb(81, 81, 81);
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiCheckbox-root .MuiSvgIcon-root {
+  fill: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader--sorted .MuiDataGrid-iconButtonContainer button svg {
+  fill: #fff !important;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader:hover .MuiDataGrid-iconButtonContainer button svg {
+  fill: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader .MuiDataGrid-menuIcon .MuiSvgIcon-root {
+  fill: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnHeader .MuiDataGrid-iconButtonContainer button svg {
+  fill: rgb(81, 81, 81);
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-columnSeparator .MuiSvgIcon-root {
+  fill: rgb(81, 81, 81);
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-footerContainer .css-rtrcn9-MuiTablePagination-root {
+  color: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-footerContainer .css-rtrcn9-MuiTablePagination-root .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+.jmt-data-table .css-ptkaw2-MuiDataGrid-root .MuiDataGrid-footerContainer .css-rtrcn9-MuiTablePagination-root .MuiTablePagination-actions .MuiButtonBase-root.Mui-disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/*# sourceMappingURL=style.css.map */

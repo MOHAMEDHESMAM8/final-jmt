@@ -1,0 +1,76 @@
+.jmt-data-table{
+    
+    .css-ptkaw2-MuiDataGrid-root{
+        border-color: rgb(81, 81, 81);
+        color: #fff;
+        p{
+            margin: 0;
+        }
+        .MuiDataGrid-withBorderColor{
+            border-color: rgb(81, 81, 81);
+        }
+
+        .MuiCheckbox-root{
+            .MuiSvgIcon-root{
+                fill: #fff;
+            }
+        }
+
+        .MuiDataGrid-columnHeader--sorted{
+            .MuiDataGrid-iconButtonContainer{
+                button{
+                    svg{
+                        fill: #fff !important;
+                    }
+                }
+            }
+        }
+
+        .MuiDataGrid-columnHeader{
+            &:hover{
+                .MuiDataGrid-iconButtonContainer{
+                    button{
+                        svg{
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+            .MuiDataGrid-menuIcon{
+                .MuiSvgIcon-root{
+                    fill: #fff;
+                }
+            }
+    
+            .MuiDataGrid-iconButtonContainer{
+                button{
+                    svg{
+                        fill: rgb(81, 81, 81);
+                    }
+                }
+            }
+        }
+
+        .MuiDataGrid-columnSeparator{
+            .MuiSvgIcon-root{
+                fill: rgb(81, 81, 81)
+            }
+        }
+
+        .MuiDataGrid-footerContainer{
+            .css-rtrcn9-MuiTablePagination-root{
+                color: #fff;
+                .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon{
+                    color: #fff;
+                }
+                .MuiTablePagination-actions{
+                    .MuiButtonBase-root{
+                        &.Mui-disabled{
+                            color: rgba(255, 255, 255, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.jmt-sessions{
+    h2{
+        margin-bottom: 45px;
+    }
+    .no-btn, .yes-btn{
+        padding: 10px 40px;
+
+    }
+    .jmt-session{
+        height: 150px;
+        background-color: $secondary_color;
+        padding: 30px 55px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        position: relative;
+        .play-now{
+            outline: none;
+            border: 0;
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1a1a1a;
+            width: auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .rec-col{
+            height: 100%;
+            .icon{
+                width: 48px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-size: 18px;
+                cursor: pointer;
+                &.info{
+                    background-color: #444;
+                    margin-right: 15px;
+                }
+    
+                &.delete{
+                    background-color: #fff;
+                    color: #1a1a1a;
+                    margin-left: 15px;
+                }
+    
+                &.edit{
+                    background-color: #1a1a1a;
+                }
+            }
+            .rec{
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+            }
+        }
+    }
+}

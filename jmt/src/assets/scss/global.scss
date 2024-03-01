@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$text_color: #fff;
+$primary_color: #1a1a1a;
+$secondary_color: rgba(255, 255, 255, 0.08);
+
+body{
+    box-sizing: border-box;
+    background-color: #222;
+    min-height: 100vh;
+    color: $text_color;
+    font-family: "Lato", sans-serif;
+    overflow: hidden;
+
+    .logo{
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .content{
+        margin-top: 100px;
+    }
+}

@@ -1,0 +1,18 @@
+.jmt-addIcon{
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    background-color: $secondary_color;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        background-color: #0e0d0d;
+        box-shadow: 7px 10px 15px #0004;
+        transform: translateY(-2px);
+    }
+}
